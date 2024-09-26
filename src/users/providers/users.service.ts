@@ -4,10 +4,11 @@ import { AuthService } from 'src/auth/providers/auth.service';
 
 @Injectable()
 export class UsersService {
+  /**
+   *  Injecting the AuthService
+   * @param authService
+   */
   constructor(
-    /**
-     * Injecting the AuthService
-     */
     @Inject(forwardRef(() => AuthService))
     private readonly authService: AuthService,
   ) {}
