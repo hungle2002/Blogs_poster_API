@@ -12,6 +12,7 @@ import {
   IsUrl,
   IsISO8601,
   ValidateNested,
+  MaxLength,
 } from 'class-validator';
 import { postType } from '../enums/postType.enum';
 import { statusType } from '../enums/statusType.enum';
@@ -24,6 +25,7 @@ export class CreatePostDto {
   })
   @IsString()
   @MinLength(4)
+  @MaxLength(512)
   @IsNotEmpty()
   title: string;
 
@@ -41,6 +43,7 @@ export class CreatePostDto {
     example: 'my-first-post',
   })
   @IsString()
+  @MaxLength(256)
   @IsNotEmpty()
   @Matches(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, {
     message:
@@ -82,6 +85,7 @@ export class CreatePostDto {
   @IsString()
   @IsUrl()
   @IsOptional()
+  @MaxLength(1024)
   featuredImageUrl?: string;
 
   @ApiPropertyOptional({
