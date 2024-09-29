@@ -6,6 +6,8 @@ import {
   Post,
   Body,
   Patch,
+  Delete,
+  Query,
 } from '@nestjs/common';
 import { PostsService } from './providers/posts.service';
 import { ApiTags, ApiOperation, ApiResponse, ApiBody } from '@nestjs/swagger';
@@ -15,10 +17,12 @@ import { PatchPostDto } from './dtos/patch-post.dto';
 @Controller('posts')
 @ApiTags('Posts')
 export class PostsController {
-  /*
-   * Injecting the PostsService
-   */
-  constructor(private readonly postsService: PostsService) {}
+  constructor(
+    /*
+     * Injecting the PostsService
+     */
+    private readonly postsService: PostsService,
+  ) {}
 
   @Get('/:userId')
   public getPost(@Param('userId', ParseIntPipe) userId: number) {
@@ -45,12 +49,16 @@ export class PostsController {
     type: PatchPostDto,
     description: 'The data to update a post',
   })
-  @Patch('/:id')
-  public updatePost(
-    @Param('id', ParseIntPipe) id: number,
-    @Body() patchPostDto: PatchPostDto,
-  ) {
-    console.log(patchPostDto);
-    return `This action updates a #${id} post`;
+  @Patch()
+  public updatePost(@Body() patchPostDto: PatchPostDto) {
+    return this.postsService.update(patchPostDto);
+  }
+
+  @ApiOperation({
+    summary: 'Delete a blog post',
+  })
+  @Delete()
+  public deletePost(@Query('id', ParseIntPipe) id: number) {
+    return this.postsService.delete(id);
   }
 }

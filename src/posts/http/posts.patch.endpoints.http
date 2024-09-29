@@ -1,23 +1,15 @@
-PATCH http://localhost:3000/posts/1
+PATCH http://localhost:3000/posts
 Content-Type: application/json
 
 {
-  "id": 123,
-  "title": "My first post",
-  "postType": "post",
-  "slug": "my-first-post",
-  "status": "draft",
-  "content": "This is the content of my first post",
-  "schema": "{}",
-  "featuredImageUrl": "https://www.example.com/featured-image.jpg",
-  "publishOn": "2024-03-16T07:46:32+0000",
-  "tags": [
-    "tag1",
-    "tag2",
-    "tag3"
-  ],
-  "metaOptions": [{
-    "key": "key",
-    "value": "value"
-  }]
+  "id": 9,
+  // "title": "My first post-100",
+  // "postType": "post",
+  // "slug": "my-first-post-100",
+  // "status": "draft",
+  // "content": "This is the content of my first post",
+  // "schema": "{}",
+  // "featuredImageUrl": "https://www.example.com/featured-image.jpg",
+  // "publishOn": "2024-03-16T07:46:32+0000",
+  "tags": [3, 6]
 }

@@ -1,0 +1,10 @@
+POST http://localhost:3000/tags
+Content-Type: application/json
+
+{
+  "name" : "Python",
+  "slug": "slug-name-4",
+  "desciption": "This is simple description",
+  "schema": "{ \"type\": \"object\", \"properties\": { \"title\": { \"type\": \"string\" } } }",
+  "featuredImageUrl": "https://www.example.com/featured-image.jpg"
+}
