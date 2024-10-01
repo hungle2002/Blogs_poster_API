@@ -5,12 +5,11 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { User } from '../user.entity';
 import { Repository } from 'typeorm';
 import { CreateUserDto } from '../dtos/create-user.dto';
+import { ConfigService, ConfigType } from '@nestjs/config';
+import profileConfig from '../config/profile.config';
 
 @Injectable()
 export class UsersService {
-  /**
-   *  Injecting dependencies
-   */
   constructor(
     /**
      * Injecting the AuthService
@@ -22,7 +21,13 @@ export class UsersService {
      * Injecting the UsersRepository
      */
     @InjectRepository(User)
-    private usersRepository: Repository<User>,
+    private readonly usersRepository: Repository<User>,
+
+    /**
+     * Injecting Config service
+     */
+    @Inject(profileConfig.KEY)
+    private readonly profileConfiguration: ConfigType<typeof profileConfig>,
   ) {}
 
   /**
@@ -55,9 +60,8 @@ export class UsersService {
     limit: number,
     page: number,
   ) {
-    // Check if the user is authenticated
-    const isAuth = this.authService.isAuth();
-    console.log('isAuth', isAuth);
+    const userKey = this.profileConfiguration;
+    console.log(userKey);
 
     return [
       {

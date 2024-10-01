@@ -150,6 +150,12 @@
                             </li>
                             <li>
                                     <span class="modifier"></span>
+                                    <span class="modifier"></span>
+                                    <span class="modifier">Public</span>
+                                <a href="#deletePost" >deletePost</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
                                     <span class="modifier">Public</span>
                                 <a href="#getPost" >getPost</a>
                             </li>
@@ -209,8 +215,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="40"
-                                    class="link-to-prism">src/posts/posts.controller.ts:40</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="44"
+                                    class="link-to-prism">src/posts/posts.controller.ts:44</a></div>
                         </td>
                     </tr>
 
@@ -234,6 +240,84 @@
                                                 <td>createPostDto</td>
                                             <td>
                                                             <code><a href="../classes/CreatePostDto.html" target="_self" >CreatePostDto</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="deletePost"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                            <span class="modifier"></span>
+                            <span class="modifier">Public</span>
+                        <span ><b>deletePost</b></span>
+                        <a href="#deletePost"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>deletePost(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@ApiOperation({summary: &#x27;Delete a blog post&#x27;})<br />@Delete()<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="61"
+                                    class="link-to-prism">src/posts/posts.controller.ts:61</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>id</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
                                             </td>
 
                                             <td>
@@ -286,8 +370,8 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="24"
-                                    class="link-to-prism">src/posts/posts.controller.ts:24</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="28"
+                                    class="link-to-prism">src/posts/posts.controller.ts:28</a></div>
                         </td>
                     </tr>
 
@@ -350,7 +434,7 @@
             <tr>
                 <td class="col-md-4">
                         <span class="modifier-icon icon ion-ios-reset"></span>
-                    <code>updatePost(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, patchPostDto: <a href="../classes/PatchPostDto.html" target="_self">PatchPostDto</a>)</code>
+                    <code>updatePost(patchPostDto: <a href="../classes/PatchPostDto.html" target="_self">PatchPostDto</a>)</code>
                 </td>
             </tr>
 
@@ -358,14 +442,14 @@
                 <td class="col-md-4">
                     <b>Decorators : </b>
                     <br />
-                    <code>@ApiBody({type: PatchPostDto, description: &#x27;The data to update a post&#x27;})<br />@Patch(&#x27;/:id&#x27;)<br /></code>
+                    <code>@ApiBody({type: PatchPostDto, description: &#x27;The data to update a post&#x27;})<br />@Patch()<br /></code>
                 </td>
             </tr>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="49"
-                                    class="link-to-prism">src/posts/posts.controller.ts:49</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="53"
+                                    class="link-to-prism">src/posts/posts.controller.ts:53</a></div>
                         </td>
                     </tr>
 
@@ -386,18 +470,6 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                                <td>id</td>
-                                            <td>
-                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
-                                            </td>
-
-                                            <td>
-                                                    No
-                                            </td>
-
-
-                                        </tr>
-                                        <tr>
                                                 <td>patchPostDto</td>
                                             <td>
                                                             <code><a href="../classes/PatchPostDto.html" target="_self" >PatchPostDto</a></code>
@@ -413,7 +485,7 @@
                                 </table>
                             </div>
                         <div class="io-description">
-                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
 
                         </div>
                             <div class="io-description">
@@ -435,6 +507,8 @@
   Post,
   Body,
   Patch,
+  Delete,
+  Query,
 } from &#x27;@nestjs/common&#x27;;
 import { PostsService } from &#x27;./providers/posts.service&#x27;;
 import { ApiTags, ApiOperation, ApiResponse, ApiBody } from &#x27;@nestjs/swagger&#x27;;
@@ -444,10 +518,12 @@ import { PatchPostDto } from &#x27;./dtos/patch-post.dto&#x27;;
 @Controller(&#x27;posts&#x27;)
 @ApiTags(&#x27;Posts&#x27;)
 export class PostsController {
-  /*
-   * Injecting the PostsService
-   */
-  constructor(private readonly postsService: PostsService) {}
+  constructor(
+    /*
+     * Injecting the PostsService
+     */
+    private readonly postsService: PostsService,
+  ) {}
 
   @Get(&#x27;/:userId&#x27;)
   public getPost(@Param(&#x27;userId&#x27;, ParseIntPipe) userId: number) {
@@ -474,13 +550,17 @@ export class PostsController {
     type: PatchPostDto,
     description: &#x27;The data to update a post&#x27;,
   })
-  @Patch(&#x27;/:id&#x27;)
-  public updatePost(
-    @Param(&#x27;id&#x27;, ParseIntPipe) id: number,
-    @Body() patchPostDto: PatchPostDto,
-  ) {
-    console.log(patchPostDto);
-    return &#x60;This action updates a #${id} post&#x60;;
+  @Patch()
+  public updatePost(@Body() patchPostDto: PatchPostDto) {
+    return this.postsService.update(patchPostDto);
+  }
+
+  @ApiOperation({
+    summary: &#x27;Delete a blog post&#x27;,
+  })
+  @Delete()
+  public deletePost(@Query(&#x27;id&#x27;, ParseIntPipe) id: number) {
+    return this.postsService.delete(id);
   }
 }
 </code></pre>

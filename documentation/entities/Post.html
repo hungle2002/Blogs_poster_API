@@ -79,7 +79,7 @@
                    <compodoc-menu mode="normal"></compodoc-menu>
                </div>
                <!-- START CONTENT -->
-               <div class="content class">
+               <div class="content entity">
                    <div class="content-data">
 
 
@@ -87,15 +87,9 @@
 
 
 
-
-
-
-
-
-
 <ol class="breadcrumb">
-  <li class="breadcrumb-item">Classes</li>
-  <li class="breadcrumb-item" >CreatePostDto</li>
+  <li class="breadcrumb-item">Entities</li>
+  <li class="breadcrumb-item" >Post</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -119,10 +113,8 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/posts/dtos/create-post.dto.ts</code>
+            <code>src/posts/post.entity.ts</code>
         </p>
-
-
 
 
 
@@ -141,81 +133,52 @@
                         <ul class="index-list">
                             <li>
                                     <span class="modifier"></span>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
-                                <a href="#authorId" >authorId</a>
+                                <a href="#author" >author</a>
                             </li>
                             <li>
                                     <span class="modifier"></span>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
-                                    <span class="modifier">Optional</span>
                                 <a href="#content" >content</a>
                             </li>
                             <li>
                                     <span class="modifier"></span>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
-                                    <span class="modifier">Optional</span>
                                 <a href="#featuredImageUrl" >featuredImageUrl</a>
                             </li>
                             <li>
                                     <span class="modifier"></span>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
+                                <a href="#id" >id</a>
+                            </li>
+                            <li>
                                     <span class="modifier"></span>
                                     <span class="modifier">Optional</span>
                                 <a href="#metaOptions" >metaOptions</a>
                             </li>
                             <li>
                                     <span class="modifier"></span>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
                                 <a href="#postType" >postType</a>
                             </li>
                             <li>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
                                     <span class="modifier"></span>
                                     <span class="modifier">Optional</span>
                                 <a href="#publishOn" >publishOn</a>
                             </li>
                             <li>
                                     <span class="modifier"></span>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
-                                    <span class="modifier">Optional</span>
                                 <a href="#schema" >schema</a>
                             </li>
                             <li>
                                     <span class="modifier"></span>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
                                 <a href="#slug" >slug</a>
                             </li>
                             <li>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
                                     <span class="modifier"></span>
                                 <a href="#status" >status</a>
                             </li>
                             <li>
                                     <span class="modifier"></span>
                                     <span class="modifier"></span>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
-                                    <span class="modifier">Optional</span>
                                 <a href="#tags" >tags</a>
                             </li>
                             <li>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
-                                    <span class="modifier"></span>
                                     <span class="modifier"></span>
                                 <a href="#title" >title</a>
                             </li>
@@ -232,7 +195,6 @@
     </table>
 </section>
 
-
             <section data-compodoc="block-properties">
     
     <h3 id="inputs">
@@ -242,19 +204,17 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
-                    <a name="authorId"></a>
+                    <a name="author"></a>
                     <span class="name">
                             <span class="modifier"></span>
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
-                        <span ><b>authorId</b></span>
-                        <a href="#authorId"><span class="icon ion-ios-link"></span></a>
+                        <span ><b>author</b></span>
+                        <a href="#author"><span class="icon ion-ios-link"></span></a>
                     </span>
                 </td>
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                        <i>Type : </i>        <code><a href="../entitys/User.html" target="_self" >User</a></code>
 
                     </td>
                 </tr>
@@ -263,13 +223,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @ApiProperty({type: &#x27;integer&#x27;, description: &#x27;The author id of the post&#x27;, example: 123, required: true})<br />@IsInt()<br />@IsNotEmpty()<br />
+                            @ManyToOne(undefined, user &#x3D;&gt; user.posts, {eager: true})<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="138" class="link-to-prism">src/posts/dtos/create-post.dto.ts:138</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/posts/post.entity.ts:86</a></div>
                         </td>
                     </tr>
 
@@ -283,9 +243,6 @@
                     <a name="content"></a>
                     <span class="name">
                             <span class="modifier"></span>
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
-                            <span class="modifier">Optional</span>
                         <span ><b>content</b></span>
                         <a href="#content"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -302,13 +259,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @ApiPropertyOptional({description: &#x27;The content of the post&#x27;, example: &#x27;This is the content of my first post&#x27;})<br />@IsString()<br />@IsOptional()<br />
+                            @Column({type: &#x27;text&#x27;, nullable: true})<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="70" class="link-to-prism">src/posts/dtos/create-post.dto.ts:70</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/posts/post.entity.ts:56</a></div>
                         </td>
                     </tr>
 
@@ -322,11 +279,6 @@
                     <a name="featuredImageUrl"></a>
                     <span class="name">
                             <span class="modifier"></span>
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
-                            <span class="modifier">Optional</span>
                         <span ><b>featuredImageUrl</b></span>
                         <a href="#featuredImageUrl"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -343,13 +295,49 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @ApiPropertyOptional({description: &#x27;The featured image URL of the post&#x27;, example: &#x27;https://www.example.com/featured-image.jpg&#x27;})<br />@IsString()<br />@IsUrl()<br />@IsOptional()<br />@MaxLength(1024)<br />
+                            @Column({type: &#x27;varchar&#x27;, length: 1024, nullable: true})<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="90" class="link-to-prism">src/posts/dtos/create-post.dto.ts:90</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/posts/post.entity.ts:69</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="id"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>id</b></span>
+                        <a href="#id"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @PrimaryGeneratedColumn()<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/posts/post.entity.ts:19</a></div>
                         </td>
                     </tr>
 
@@ -363,9 +351,6 @@
                     <a name="metaOptions"></a>
                     <span class="name">
                             <span class="modifier"></span>
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
                             <span class="modifier">Optional</span>
                         <span ><b>metaOptions</b></span>
                         <a href="#metaOptions"><span class="icon ion-ios-link"></span></a>
@@ -374,7 +359,7 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>        <code><a href="../classes/CreatePostMetaOptionDto.html" target="_self" >CreatePostMetaOptionDto | null</a></code>
+                        <i>Type : </i>        <code><a href="../entitys/MetaOption.html" target="_self" >MetaOption</a></code>
 
                     </td>
                 </tr>
@@ -383,13 +368,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @ApiPropertyOptional({description: &#x27;The meta options of the post&#x27;, type: &#x27;object&#x27;, required: false, items: undefined})<br />@IsOptional()<br />@ValidateNested({each: true})<br />@Type(undefined)<br />
+                            @OneToOne(undefined, metaoption &#x3D;&gt; metaoption.post, {cascade: true, eager: true})<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="128" class="link-to-prism">src/posts/dtos/create-post.dto.ts:128</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/posts/post.entity.ts:81</a></div>
                         </td>
                     </tr>
 
@@ -402,8 +387,6 @@
                 <td class="col-md-4">
                     <a name="postType"></a>
                     <span class="name">
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
                             <span class="modifier"></span>
                         <span ><b>postType</b></span>
                         <a href="#postType"><span class="icon ion-ios-link"></span></a>
@@ -421,13 +404,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @ApiProperty({enum: postType, description: &#x27;Possible values: post, page, story, series&#x27;, example: &#x27;post&#x27;})<br />@IsEnum(postType)<br />@IsNotEmpty()<br />
+                            @Column({type: &#x27;enum&#x27;, enum: postType, nullable: false, default: undefined})<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/posts/dtos/create-post.dto.ts:40</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/posts/post.entity.ts:34</a></div>
                         </td>
                     </tr>
 
@@ -440,8 +423,6 @@
                 <td class="col-md-4">
                     <a name="publishOn"></a>
                     <span class="name">
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
                             <span class="modifier"></span>
                             <span class="modifier">Optional</span>
                         <span ><b>publishOn</b></span>
@@ -460,13 +441,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @ApiPropertyOptional({description: &#x27;The publish date of the post&#x27;, example: &#x27;2024-03-16T07:46:32+0000&#x27;})<br />@IsISO8601()<br />@IsOptional()<br />
+                            @Column({type: &#x27;timestamp&#x27;, nullable: true})<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="99" class="link-to-prism">src/posts/dtos/create-post.dto.ts:99</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/posts/post.entity.ts:75</a></div>
                         </td>
                     </tr>
 
@@ -480,9 +461,6 @@
                     <a name="schema"></a>
                     <span class="name">
                             <span class="modifier"></span>
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
-                            <span class="modifier">Optional</span>
                         <span ><b>schema</b></span>
                         <a href="#schema"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -499,13 +477,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @ApiPropertyOptional({description: &#x27;Serialized JSON object else a validation error will be thrown&#x27;, example: &#x27;{ &quot;type&quot;: &quot;object&quot;, &quot;properties&quot;: { &quot;title&quot;: { &quot;type&quot;: &quot;string&quot; } } }&#x27;})<br />@IsJSON()<br />@IsOptional()<br />
+                            @Column({type: &#x27;text&#x27;, nullable: true})<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/posts/dtos/create-post.dto.ts:80</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/posts/post.entity.ts:62</a></div>
                         </td>
                     </tr>
 
@@ -518,10 +496,6 @@
                 <td class="col-md-4">
                     <a name="slug"></a>
                     <span class="name">
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
                             <span class="modifier"></span>
                         <span ><b>slug</b></span>
                         <a href="#slug"><span class="icon ion-ios-link"></span></a>
@@ -539,13 +513,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @ApiProperty({description: &#x27;The slug of the post&#x27;, example: &#x27;my-first-post&#x27;})<br />@IsString()<br />@MaxLength(256)<br />@IsNotEmpty()<br />@Matches(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, {message: &#x27;Slug should be all small letter and uses &quot;-&quot; as separator. For example: my-url&#x27;})<br />
+                            @Column({type: &#x27;varchar&#x27;, length: 256, nullable: false, unique: true})<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/posts/dtos/create-post.dto.ts:53</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/posts/post.entity.ts:42</a></div>
                         </td>
                     </tr>
 
@@ -558,8 +532,6 @@
                 <td class="col-md-4">
                     <a name="status"></a>
                     <span class="name">
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
                             <span class="modifier"></span>
                         <span ><b>status</b></span>
                         <a href="#status"><span class="icon ion-ios-link"></span></a>
@@ -577,13 +549,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @ApiProperty({enum: statusType, description: &#x27;Possible values: draft, scheduled, review, published&#x27;, example: &#x27;draft&#x27;})<br />@IsEnum(statusType)<br />@IsNotEmpty()<br />
+                            @Column({type: &#x27;enum&#x27;, enum: statusType, nullable: false, default: undefined})<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/posts/dtos/create-post.dto.ts:62</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/posts/post.entity.ts:50</a></div>
                         </td>
                     </tr>
 
@@ -598,9 +570,6 @@
                     <span class="name">
                             <span class="modifier"></span>
                             <span class="modifier"></span>
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
-                            <span class="modifier">Optional</span>
                         <span ><b>tags</b></span>
                         <a href="#tags"><span class="icon ion-ios-link"></span></a>
                     </span>
@@ -608,7 +577,7 @@
             </tr>
                 <tr>
                     <td class="col-md-4">
-                        <i>Type : </i>    <code>number[]</code>
+                        <i>Type : </i>        <code><a href="../entitys/Tag.html" target="_self" >Tag[]</a></code>
 
                     </td>
                 </tr>
@@ -617,13 +586,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @ApiPropertyOptional({description: &#x27;Array of ids of tags.&#x27;, example: undefined})<br />@IsArray()<br />@IsInt({each: true})<br />@IsOptional()<br />
+                            @ManyToMany(undefined, tag &#x3D;&gt; tag.posts, {eager: true})<br />@JoinTable()<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="108" class="link-to-prism">src/posts/dtos/create-post.dto.ts:108</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="92" class="link-to-prism">src/posts/post.entity.ts:92</a></div>
                         </td>
                     </tr>
 
@@ -636,10 +605,6 @@
                 <td class="col-md-4">
                     <a name="title"></a>
                     <span class="name">
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
-                            <span class="modifier"></span>
                             <span class="modifier"></span>
                         <span ><b>title</b></span>
                         <a href="#title"><span class="icon ion-ios-link"></span></a>
@@ -657,13 +622,13 @@
                         <b>Decorators : </b>
                         <br />
                         <code>
-                            @ApiProperty({description: &#x27;The title of the post&#x27;, example: &#x27;My first post&#x27;})<br />@IsString()<br />@MinLength(4)<br />@MaxLength(512)<br />@IsNotEmpty()<br />
+                            @Column({type: &#x27;varchar&#x27;, length: 512, nullable: false})<br />
                         </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/posts/dtos/create-post.dto.ts:31</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/posts/post.entity.ts:26</a></div>
                         </td>
                     </tr>
 
@@ -671,159 +636,112 @@
         </tbody>
     </table>
 </section>
-
-
-
-
-
-
-
     </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ApiProperty, ApiPropertyOptional } from &#x27;@nestjs/swagger&#x27;;
-import { Type } from &#x27;class-transformer&#x27;;
-import {
-  IsString,
-  IsNotEmpty,
-  IsEnum,
-  IsOptional,
-  IsArray,
-  MinLength,
-  Matches,
-  IsJSON,
-  IsUrl,
-  IsISO8601,
-  ValidateNested,
-  MaxLength,
-  IsInt,
-} from &#x27;class-validator&#x27;;
-import { postType } from &#x27;../enums/postType.enum&#x27;;
-import { statusType } from &#x27;../enums/statusType.enum&#x27;;
-import { CreatePostMetaOptionDto } from &#x27;../../meta-options/dtos/create-post-meta-option.dto&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  Column,
+  Entity,
+  JoinTable,
+  ManyToMany,
+  ManyToOne,
+  OneToOne,
+  PrimaryGeneratedColumn,
+} from &#x27;typeorm&#x27;;
+import { postType } from &#x27;./enums/postType.enum&#x27;;
+import { statusType } from &#x27;./enums/statusType.enum&#x27;;
+import { MetaOption } from &#x27;src/meta-options/meta-option.entity&#x27;;
+import { User } from &#x27;src/users/user.entity&#x27;;
+import { Tag } from &#x27;src/tags/tag.entity&#x27;;
 
-export class CreatePostDto {
-  @ApiProperty({
-    description: &#x27;The title of the post&#x27;,
-    example: &#x27;My first post&#x27;,
+@Entity()
+export class Post {
+  @PrimaryGeneratedColumn()
+  id: number;
+
+  @Column({
+    type: &#x27;varchar&#x27;,
+    length: 512,
+    nullable: false,
   })
-  @IsString()
-  @MinLength(4)
-  @MaxLength(512)
-  @IsNotEmpty()
   title: string;
 
-  @ApiProperty({
+  @Column({
+    type: &#x27;enum&#x27;,
     enum: postType,
-    description: &#x27;Possible values: post, page, story, series&#x27;,
-    example: &#x27;post&#x27;,
+    nullable: false,
+    default: postType.POST,
   })
-  @IsEnum(postType)
-  @IsNotEmpty()
   postType: postType;
 
-  @ApiProperty({
-    description: &#x27;The slug of the post&#x27;,
-    example: &#x27;my-first-post&#x27;,
-  })
-  @IsString()
-  @MaxLength(256)
-  @IsNotEmpty()
-  @Matches(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, {
-    message:
-      &#x27;Slug should be all small letter and uses &quot;-&quot; as separator. For example: my-url&#x27;,
+  @Column({
+    type: &#x27;varchar&#x27;,
+    length: 256,
+    nullable: false,
+    unique: true,
   })
   slug: string;
 
-  @ApiProperty({
+  @Column({
+    type: &#x27;enum&#x27;,
     enum: statusType,
-    description: &#x27;Possible values: draft, scheduled, review, published&#x27;,
-    example: &#x27;draft&#x27;,
+    nullable: false,
+    default: statusType.DRAFT,
   })
-  @IsEnum(statusType)
-  @IsNotEmpty()
   status: statusType;
 
-  @ApiPropertyOptional({
-    description: &#x27;The content of the post&#x27;,
-    example: &#x27;This is the content of my first post&#x27;,
+  @Column({
+    type: &#x27;text&#x27;,
+    nullable: true,
   })
-  @IsString()
-  @IsOptional()
-  content?: string;
+  content: string;
 
-  @ApiPropertyOptional({
-    description:
-      &#x27;Serialized JSON object else a validation error will be thrown&#x27;,
-    example:
-      &#x27;{ &quot;type&quot;: &quot;object&quot;, &quot;properties&quot;: { &quot;title&quot;: { &quot;type&quot;: &quot;string&quot; } } }&#x27;,
+  @Column({
+    type: &#x27;text&#x27;,
+    nullable: true,
   })
-  @IsJSON()
-  @IsOptional()
-  schema?: string;
+  schema: string;
 
-  @ApiPropertyOptional({
-    description: &#x27;The featured image URL of the post&#x27;,
-    example: &#x27;https://www.example.com/featured-image.jpg&#x27;,
+  @Column({
+    type: &#x27;varchar&#x27;,
+    length: 1024,
+    nullable: true,
   })
-  @IsString()
-  @IsUrl()
-  @IsOptional()
-  @MaxLength(1024)
-  featuredImageUrl?: string;
+  featuredImageUrl: string;
 
-  @ApiPropertyOptional({
-    description: &#x27;The publish date of the post&#x27;,
-    example: &#x27;2024-03-16T07:46:32+0000&#x27;,
+  @Column({
+    type: &#x27;timestamp&#x27;, // &#x27;datetime&#x27; in mysql
+    nullable: true,
   })
-  @IsISO8601()
-  // @Type(() &#x3D;&gt; Date)
-  @IsOptional()
   publishOn?: Date;
 
-  @ApiPropertyOptional({
-    description: &#x27;Array of ids of tags.&#x27;,
-    example: [2, 3],
+  @OneToOne(() &#x3D;&gt; MetaOption, (metaoption) &#x3D;&gt; metaoption.post, {
+    cascade: true,
+    eager: true,
   })
-  @IsArray()
-  @IsInt({ each: true })
-  @IsOptional()
-  tags?: number[];
+  metaOptions?: MetaOption;
 
-  @ApiPropertyOptional({
-    description: &#x27;The meta options of the post&#x27;,
-    type: &#x27;object&#x27;,
-    required: false,
-    items: {
-      type: &#x27;object&#x27;,
-      properties: {
-        metaValue: {
-          type: &#x27;json&#x27;,
-          description: &#x27;The metaValue is a JSON string&#x27;,
-          example: &#x27;{ &quot;sideBarEnable&quot;: true }&#x27;,
-        },
-      },
-    },
+  @ManyToOne(() &#x3D;&gt; User, (user) &#x3D;&gt; user.posts, {
+    eager: true,
   })
-  @IsOptional()
-  @ValidateNested({ each: true })
-  @Type(() &#x3D;&gt; CreatePostMetaOptionDto)
-  metaOptions?: CreatePostMetaOptionDto | null;
+  author: User;
 
-  @ApiProperty({
-    type: &#x27;integer&#x27;,
-    description: &#x27;The author id of the post&#x27;,
-    example: 123,
-    required: true,
+  @ManyToMany(() &#x3D;&gt; Tag, (tag) &#x3D;&gt; tag.posts, {
+    eager: true,
   })
-  @IsInt()
-  @IsNotEmpty()
-  authorId: number;
+  @JoinTable()
+  tags: Tag[];
 }
 </code></pre>
     </div>
 </div>
+
+
+
+
+
+
 
 
 
@@ -858,8 +776,8 @@ export class CreatePostDto {
 
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
-            var COMPODOC_CURRENT_PAGE_URL = 'CreatePostDto.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'entity';
+            var COMPODOC_CURRENT_PAGE_URL = 'Post.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 
