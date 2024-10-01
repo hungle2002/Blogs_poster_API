@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable, RequestTimeoutException } from '@nestjs/common';
 import { UsersService } from 'src/users/providers/users.service';
 import { CreatePostDto } from '../dtos/create-post.dto';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -66,10 +66,42 @@ export class PostsService {
 
   public async update(patchPostDto: PatchPostDto) {
     // Find the Tags (need to assign)
-    const tags = await this.tagService.findMultipleTag(patchPostDto.tags);
+    let tags = undefined;
+    try {
+      tags = await this.tagService.findMultipleTag(patchPostDto.tags);
+    } catch (error) {
+      console.log(error);
+      throw new RequestTimeoutException(
+        'Unable to process your request at the moment. Please try again later.',
+        {
+          description: 'Error connecting to the database',
+        },
+      );
+    }
+
+    // Checking if all tags exist
+    if (!tags || tags.length !== patchPostDto.tags.length) {
+      throw new BadRequestException('There is a tag that does not exist');
+    }
 
     // Find the Post
-    const post = await this.postsRepository.findOneBy({ id: patchPostDto.id });
+    let post = undefined;
+    try {
+      post = await this.postsRepository.findOneBy({ id: patchPostDto.id });
+    } catch (error) {
+      console.log(error);
+      throw new RequestTimeoutException(
+        'Unable to process your request at the moment. Please try again later.',
+        {
+          description: 'Error connecting to the database',
+        },
+      );
+    }
+
+    // Handle post not found
+    if (!post) {
+      throw new BadRequestException('The post id does not exist');
+    }
 
     // Update the properties
     post.title = patchPostDto.title ?? post.title;
@@ -85,7 +117,18 @@ export class PostsService {
     post.tags = tags;
 
     // Save the post and return
-    return await this.postsRepository.save(post);
+    try {
+      post = await this.postsRepository.save(post);
+    } catch (error) {
+      console.log(error);
+      throw new RequestTimeoutException(
+        'Unable to process your request at the moment. Please try again later.',
+        {
+          description: 'Error connecting to the database',
+        },
+      );
+    }
+    return post;
   }
 
   /**
