@@ -10,10 +10,10 @@ import {
   Matches,
   IsJSON,
   IsUrl,
-  IsISO8601,
   ValidateNested,
   MaxLength,
   IsInt,
+  IsDate,
 } from 'class-validator';
 import { postType } from '../enums/postType.enum';
 import { statusType } from '../enums/statusType.enum';
@@ -93,7 +93,7 @@ export class CreatePostDto {
     description: 'The publish date of the post',
     example: '2024-03-16T07:46:32+0000',
   })
-  @IsISO8601()
+  @IsDate()
   // @Type(() => Date)
   @IsOptional()
   publishOn?: Date;

@@ -1,2 +1,12 @@
 # Get Posts
+{{
+  // pre request
+  const date = new Date();
+  exports.startDate = date.toString()
+  exports.endDate = date.toString()
+}}
 GET http://localhost:3000/posts/8
+  ?page=1
+  &limit=2
+  &startDate={{startDate}}
+  &endDate={{endDate}}

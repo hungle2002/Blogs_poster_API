@@ -13,6 +13,7 @@ import { PostsService } from './providers/posts.service';
 import { ApiTags, ApiOperation, ApiResponse, ApiBody } from '@nestjs/swagger';
 import { CreatePostDto } from './dtos/create-post.dto';
 import { PatchPostDto } from './dtos/patch-post.dto';
+import { GetPostsDto } from './dtos/get-posts.dto';
 
 @Controller('posts')
 @ApiTags('Posts')
@@ -25,8 +26,11 @@ export class PostsController {
   ) {}
 
   @Get('/:userId')
-  public getPost(@Param('userId', ParseIntPipe) userId: number) {
-    return this.postsService.findAllByUserId(userId);
+  public getPost(
+    @Param('userId', ParseIntPipe) userId: number,
+    @Query() postQuery: GetPostsDto,
+  ) {
+    return this.postsService.findAllByUserId(userId, postQuery);
   }
 
   @ApiOperation({
