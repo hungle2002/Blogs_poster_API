@@ -1,4 +1,8 @@
-import { BadRequestException, Injectable, RequestTimeoutException } from '@nestjs/common';
+import {
+  BadRequestException,
+  Injectable,
+  RequestTimeoutException,
+} from '@nestjs/common';
 import { UsersService } from 'src/users/providers/users.service';
 import { CreatePostDto } from '../dtos/create-post.dto';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -32,7 +36,8 @@ export class PostsService {
    */
   public findAllByUserId(userId: number) {
     // Find the user
-    const user = this.usersService.findOneById(userId);
+    // const user = this.usersService.findOneById(userId);
+    console.log(userId);
 
     const posts = this.postsRepository.find();
     return posts;

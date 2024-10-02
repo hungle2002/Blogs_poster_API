@@ -11,10 +11,12 @@ import { GetUsersParamDto } from '../dtos/get-users-param.dto';
 import { AuthService } from 'src/auth/providers/auth.service';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from '../user.entity';
-import { Repository } from 'typeorm';
+import { DataSource, Repository } from 'typeorm';
 import { CreateUserDto } from '../dtos/create-user.dto';
 import profileConfig from '../config/profile.config';
 import { ConfigType } from '@nestjs/config';
+import { UsersCreateManyProvider } from './users-create-many.provider';
+import { CreateManyUsersDto } from '../dtos/create-many-users.dto';
 
 @Injectable()
 export class UsersService {
@@ -36,6 +38,16 @@ export class UsersService {
      */
     @Inject(profileConfig.KEY)
     private readonly profileConfiguration: ConfigType<typeof profileConfig>,
+
+    /**
+     * Injecting Datasource
+     */
+    private readonly dataSource: DataSource,
+
+    /**
+     * Injecting users-create-many provider
+     */
+    private readonly usersCreateManyProvider: UsersCreateManyProvider,
   ) {}
 
   /**
@@ -95,19 +107,20 @@ export class UsersService {
     limit: number,
     page: number,
   ) {
-    throw new HttpException(
-      {
-        status: HttpStatus.MOVED_PERMANENTLY,
-        error: 'The API endpoint does not exist',
-        fileName: 'users.service.ts',
-        lineNumber: 101,
-      },
-      HttpStatus.MOVED_PERMANENTLY,
-      {
-        cause: new Error(),
-        description: 'Occured because the API endpoint was removed permanently',
-      },
-    );
+    return this.usersRepository.find();
+    // throw new HttpException(
+    //   {
+    //     status: HttpStatus.MOVED_PERMANENTLY,
+    //     error: 'The API endpoint does not exist',
+    //     fileName: 'users.service.ts',
+    //     lineNumber: 101,
+    //   },
+    //   HttpStatus.MOVED_PERMANENTLY,
+    //   {
+    //     cause: new Error(),
+    //     description: 'Occured because the API endpoint was removed permanently',
+    //   },
+    // );
   }
 
   /**
@@ -136,5 +149,14 @@ export class UsersService {
     }
 
     return user;
+  }
+
+  /**
+   * Create many users
+   * @param users
+   * @returns
+   */
+  public async createMany(createManyUsersDto: CreateManyUsersDto) {
+    return await this.usersCreateManyProvider.createMany(createManyUsersDto);
   }
 }
