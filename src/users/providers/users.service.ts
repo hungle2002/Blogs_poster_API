@@ -17,6 +17,9 @@ import { CreateManyUsersDto } from '../dtos/create-many-users.dto';
 import { CreateUserProvider } from './create-user.provider';
 import { Repository } from 'typeorm';
 import { FindOneUserByEmailProvider } from './find-one-user-by-email.provider';
+import { FindOneByGoogleIdProvider } from './find-one-by-google-id.provider';
+import { CreateGoogleUserProvider } from './create-google-user.provider';
+import { GoogleUser } from '../interfaces/google-user.interface';
 
 @Injectable()
 export class UsersService {
@@ -53,6 +56,16 @@ export class UsersService {
      * Injecting find-one-user-by-email provider
      */
     private readonly findOneUserByEmailProvider: FindOneUserByEmailProvider,
+
+    /**
+     * Injecting find-one-by-google-id provider
+     */
+    private readonly findOneByGoogleIdProvider: FindOneByGoogleIdProvider,
+
+    /**
+     * Injecting create-google-user provider
+     */
+    private readonly createGoogleUserProvider: CreateGoogleUserProvider,
   ) {}
 
   /**
@@ -136,5 +149,23 @@ export class UsersService {
    */
   public async findOneByEmail(email: string) {
     return await this.findOneUserByEmailProvider.findOneByEmail(email);
+  }
+
+  /**
+   * Find a user by googleId
+   * @param googleId
+   * @returns
+   */
+  public async findOneByGoogleId(googleId: string) {
+    return await this.findOneByGoogleIdProvider.findOneByGoogleId(googleId);
+  }
+
+  /**
+   * Create a new google user
+   * @param googleUser
+   * @returns
+   */
+  public async createGoogleUser(googleUser: GoogleUser) {
+    return await this.createGoogleUserProvider.createGoogleUser(googleUser);
   }
 }

@@ -1,3 +1,4 @@
 GET http://localhost:3000/users/
-?limit=2
+?limit=100
 &page=1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjE1LCJlbWFpbCI6ImpvaG5AZG9lMTAuY29tIiwiaWF0IjoxNzI4MjI0NTMyLCJleHAiOjE3MjgyMjgxMzIsImF1ZCI6ImxvY2FsaG9zdDozMDAwIiwiaXNzIjoibG9jYWxob3N0OjMwMDAifQ.e26jOyljvRh_VwmvjDxerGdiKTBfQHpjdVCgXDcrOl0
