@@ -14,6 +14,10 @@ export class TagsService {
     private readonly tagsRepository: Repository<Tag>,
   ) {}
 
+  public async getTags() {
+    return await this.tagsRepository.find();
+  }
+
   public async create(createTagDto: CreateTagDto) {
     const tag = this.tagsRepository.create(createTagDto);
     return await this.tagsRepository.save(tag);

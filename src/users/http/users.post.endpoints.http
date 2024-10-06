@@ -12,13 +12,14 @@ Content-Type: application/json
 
 POST http://localhost:3000/users/create-many
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjE1LCJlbWFpbCI6ImpvaG5AZG9lMTAuY29tIiwiaWF0IjoxNzI4MTM4ODkwLCJleHAiOjE3MjgxNDI0OTAsImF1ZCI6ImxvY2FsaG9zdDozMDAwIiwiaXNzIjoibG9jYWxob3N0OjMwMDAifQ.7OSq8FDHTenY1axF8_LK876Ua9ZcBq19qjvKSTvjGXc
 
 {
   "users": [
     {
     "firstName": "John1",
     "lastName": "Doe1",
-    "email": "john@doe9.com",
+    "email": "john@doe12.com",
     "password": "@Lehung2002"
     }
   ]

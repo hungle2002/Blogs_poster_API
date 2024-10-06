@@ -2,6 +2,7 @@ import {
   Body,
   Controller,
   Delete,
+  Get,
   ParseIntPipe,
   Post,
   Query,
@@ -19,6 +20,18 @@ export class TagsController {
      */
     private readonly tagsService: TagsService,
   ) {}
+
+  @ApiOperation({
+    summary: 'Get all tags',
+  })
+  @ApiResponse({
+    status: 200,
+    description: 'The found record',
+  })
+  @Get()
+  public getTags() {
+    return this.tagsService.getTags();
+  }
 
   @ApiOperation({
     summary: 'Create a new tag',

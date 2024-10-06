@@ -1,13 +1,2 @@
-# Get Posts
-{{
-  // pre request
-  const date = new Date();
-  exports.startDate = date.toString()
-  exports.endDate = date.toString()
-}}
-GET http://localhost:3000/posts/8
-  ?page=1
-  &limit=100
-  &startDate={{startDate}}
-  &endDate={{endDate}}
+GET http://localhost:3000/tags
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjE1LCJlbWFpbCI6ImpvaG5AZG9lMTAuY29tIiwiaWF0IjoxNzI4MTg3OTAyLCJleHAiOjE3MjgxOTE1MDIsImF1ZCI6ImxvY2FsaG9zdDozMDAwIiwiaXNzIjoibG9jYWxob3N0OjMwMDAifQ.8EELh7hB5D295AlC5YatzyMJFLmsTlZDZdHYCRlRuek

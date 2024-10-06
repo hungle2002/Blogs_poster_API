@@ -1,5 +1,6 @@
 POST http://localhost:3000/tags
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjE1LCJlbWFpbCI6ImpvaG5AZG9lMTAuY29tIiwiaWF0IjoxNzI4MTg3OTAyLCJleHAiOjE3MjgxOTE1MDIsImF1ZCI6ImxvY2FsaG9zdDozMDAwIiwiaXNzIjoibG9jYWxob3N0OjMwMDAifQ.8EELh7hB5D295AlC5YatzyMJFLmsTlZDZdHYCRlRuek
 
 {
   "name" : "Python",
